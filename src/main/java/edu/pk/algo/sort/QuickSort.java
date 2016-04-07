@@ -12,7 +12,8 @@ public class QuickSort {
     }
 
     /**
-     * Recursive method
+     * Iterative method
+     * Put low and high in stack to work same as recursive
      */
     private static void quickSortIterative(int[] a, int l, int h) {
         if (l < h) {
