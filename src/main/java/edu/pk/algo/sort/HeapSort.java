@@ -1,4 +1,4 @@
-package edu.pk.algo;
+package edu.pk.algo.sort;
 
 public class HeapSort {
 	public static void main(String[] args) {

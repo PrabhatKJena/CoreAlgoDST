@@ -7,25 +7,7 @@ import java.util.regex.*;
 public class Solution {
 
     public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        for (int t0 = 0; t0 < t; t0++) {
-            String str = sc.next();
-            char[] chars = str.toCharArray();
-            int l = chars.length;
-            int l1 = l / 2;
-            boolean f = true;
-            for (int i = 1, j = l - 2; i <= l1 && j >= l1; i++, j--) {
-                if (Math.abs(chars[i] - chars[i - 1]) != Math.abs(chars[j] - chars[j + 1])) {
-                    f = false;
-                    break;
-                }
-            }
-            if (f)
-                System.out.println("Funny");
-            else
-                System.out.println("Not Funny");
-        }
+
     }
 }
 
