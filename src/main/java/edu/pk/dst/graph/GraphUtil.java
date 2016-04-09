@@ -22,8 +22,8 @@ public class GraphUtil {
      * @param src
      * @return Vertex
      */
-    public static Vertex findSet(Graph graph, int src) {
-        Vertex vertex = graph.getVertices().get(src);
+    public static Vertex<? extends Comparable> findSet(Graph<? extends Comparable> graph, Comparable src) {
+        Vertex<? extends Comparable> vertex = graph.getVertexByLabel(src);
         if (vertex.getParent().getLabel() != vertex.getLabel()) {
             return findSet(graph, vertex.getParent().getLabel());
         }
@@ -36,7 +36,7 @@ public class GraphUtil {
      * @param x
      * @param y
      */
-    public static void union(Graph graph, int x, int y) {
+    public static void union(Graph<? extends Comparable> graph, Comparable x, Comparable y) {
         link(findSet(graph, x), findSet(graph, y));
     }
 }
