@@ -21,7 +21,7 @@ public class Vertex<E extends Comparable> {
         return parent;
     }
 
-    public void setParent(Vertex<E> parent) {
+    public void setParent(Vertex<? extends Comparable> parent) {
         this.parent = parent;
     }
 

@@ -5,13 +5,14 @@ import java.util.*;
  */
 public class PrimsMST {
     public static void main(String[] args) {
-        Graph<Integer> graph = new Graph<Integer>();
-        /*graph.addEdge('A', 'B', 2);
+      /*  Graph<Character> graph = new Graph<Character>();
+        graph.addEdge('A', 'B', 2);
         graph.addEdge('A', 'C', 4);
         graph.addEdge('B', 'C', 1);
         graph.addEdge('B', 'D', 3);
         graph.addEdge('C', 'D', 6);*/
 
+        Graph<Integer> graph = new Graph<Integer>();
         graph.addEdge(0, 1, 4);
         graph.addEdge(0, 7, 8);
         graph.addEdge(1, 2, 8);
@@ -28,21 +29,17 @@ public class PrimsMST {
         graph.addEdge(7, 8, 7);
 
         graph.printAdjacencyList();
-        Set<Vertex> mstByPrimsAlgo = findMSTByPrimsAlgo(graph, graph.getVertexByLabel(0));
-        printMST(graph,mstByPrimsAlgo);
+        Set<Vertex> mstVertexSet = findMSTByPrimsAlgo(graph, graph.getVertexByLabel(0));
+        GraphUtil.printVerticesWithWeight(mstVertexSet);
     }
 
-    // Printing MST edges with source---weight--->dest
-    private static void printMST(Graph graph, Set<Vertex> vertices) {
-        for (Vertex vertex : vertices) {
-            Vertex parent = vertex.getParent();
-            if (parent != null) {
-                System.out.println(parent.getLabel() + "-----"+parent.getAdjVertexByLabel(vertex.getLabel()).getWeight()+"--->" + vertex.getLabel());
-            }
-        }
-    }
-
-    private static Set<Vertex> findMSTByPrimsAlgo(Graph<? extends Comparable> graph, Vertex v0) {
+    /**
+     * Finds MST by using Prim's Algorithm
+     * @param graph
+     * @param source vertex
+     * @return set of vertices makes MST
+     */
+    public static Set<Vertex> findMSTByPrimsAlgo(Graph<? extends Comparable> graph, Vertex v0) {
         Set<Vertex> mstVertices = new HashSet<>();
         // Setting initial rank and parent as INFINITE and NULL
         graph.getVertices().forEach(v -> {
@@ -55,7 +52,7 @@ public class PrimsMST {
 
         Set<Vertex> vSet = new HashSet<>(graph.getVertices());
         while (!vSet.isEmpty()) {
-            Vertex v = extractMin(vSet);
+            Vertex v = GraphUtil.extractMin(vSet);
             if (v != null) {
                 // For all adjacent vertices update rank and parent
                 List<AdjVertex> adjacents = v.getAdjacents();
@@ -71,14 +68,4 @@ public class PrimsMST {
         return mstVertices;
     }
 
-    // Finding Vertex with minimum rank using stream API
-    private static Vertex extractMin(Set<? extends Vertex> vertices) {
-        Vertex min = vertices.stream().min((a, b) -> {
-            return Integer.valueOf(a.getRank()).compareTo(b.getRank());
-        }).orElse(null);
-        if (min != null) {
-            vertices.remove(min);
-        }
-        return min;
-    }
 }

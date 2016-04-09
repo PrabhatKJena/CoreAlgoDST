@@ -21,7 +21,7 @@ public class Edge implements Comparable<Edge> {
         this.dest = dest;
     }
 
-    public Vertex getSrc() {
+    public Vertex<? extends Comparable> getSrc() {
         return src;
     }
 

@@ -38,9 +38,6 @@ public class KruskalMST {
         List<Edge> mstEdges = new ArrayList<>();
 
         // Making each vertex as Disjoint set
-        for (Vertex<? extends Comparable> v : graph.getVertices()) {
-
-        }
         graph.getVertices().forEach(v -> {
             v.setParent(v);
             v.setRank(0);

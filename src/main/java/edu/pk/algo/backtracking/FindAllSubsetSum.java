@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * Find all subsets of an int array whose sums equal a given target
+ *
+ * Using : Backtracking
  */
 public class FindAllSubsetSum {
     public static void main(String[] args) {
