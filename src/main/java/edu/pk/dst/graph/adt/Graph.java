@@ -1,4 +1,6 @@
-package edu.pk.dst.graph;
+package edu.pk.dst.graph.adt;
+
+import edu.pk.dst.graph.AdjVertex;
 
 import java.util.*;
 

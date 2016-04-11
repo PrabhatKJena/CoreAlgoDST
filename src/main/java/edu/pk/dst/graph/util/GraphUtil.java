@@ -1,4 +1,7 @@
-package edu.pk.dst.graph;
+package edu.pk.dst.graph.util;
+
+import edu.pk.dst.graph.adt.Graph;
+import edu.pk.dst.graph.adt.Vertex;
 
 import java.util.Set;
 

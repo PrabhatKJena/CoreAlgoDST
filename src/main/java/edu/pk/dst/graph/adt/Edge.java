@@ -1,4 +1,4 @@
-package edu.pk.dst.graph;
+package edu.pk.dst.graph.adt;
 
 import java.util.Objects;
 

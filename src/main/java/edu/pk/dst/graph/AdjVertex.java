@@ -1,5 +1,7 @@
 package edu.pk.dst.graph;
 
+import edu.pk.dst.graph.adt.Vertex;
+
 /**
  * It is a wrapper class of Vertex.
  */

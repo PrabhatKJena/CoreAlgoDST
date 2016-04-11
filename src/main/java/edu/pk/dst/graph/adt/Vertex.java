@@ -1,4 +1,6 @@
-package edu.pk.dst.graph;
+package edu.pk.dst.graph.adt;
+
+import edu.pk.dst.graph.AdjVertex;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,7 +90,7 @@ public class Vertex<E extends Comparable> {
         return Objects.hash(label);
     }
 
-    static enum State {
+    public static enum State {
         INITIAL(0),
         IN_PROGRESS(1),
         COMPLETED(2);
