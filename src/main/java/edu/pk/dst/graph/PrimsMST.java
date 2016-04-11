@@ -29,18 +29,19 @@ public class PrimsMST {
         graph.addEdge(7, 8, 7);
 
         graph.printAdjacencyList();
-        Set<Vertex> mstVertexSet = findMSTByPrimsAlgo(graph, graph.getVertexByLabel(0));
+        Set<Vertex<? extends Comparable>> mstVertexSet = findMSTByPrimsAlgo(graph, graph.getVertexByLabel(0));
         GraphUtil.printVerticesWithWeight(mstVertexSet);
     }
 
     /**
      * Finds MST by using Prim's Algorithm
      * @param graph
-     * @param source vertex
-     * @return set of vertices makes MST
+     * @param v0 source vertex
+     * @return set of vertices (except v0) makes MST. {(v, v.parent) : v belongs to G.V - {v0}}
+     *
      */
-    public static Set<Vertex> findMSTByPrimsAlgo(Graph<? extends Comparable> graph, Vertex v0) {
-        Set<Vertex> mstVertices = new HashSet<>();
+    public static Set<Vertex<? extends Comparable>> findMSTByPrimsAlgo(Graph<? extends Comparable> graph, Vertex v0) {
+        Set<Vertex<? extends Comparable>> mstVertices = new HashSet<>();
         // Setting initial rank and parent as INFINITE and NULL
         graph.getVertices().forEach(v -> {
             v.setParent(null);
@@ -50,7 +51,7 @@ public class PrimsMST {
         // Start from v0
         v0.setRank(0);
 
-        Set<Vertex> vSet = new HashSet<>(graph.getVertices());
+        Set<Vertex<? extends Comparable>> vSet = new HashSet<>(graph.getVertices());
         while (!vSet.isEmpty()) {
             Vertex v = GraphUtil.extractMin(vSet);
             if (v != null) {

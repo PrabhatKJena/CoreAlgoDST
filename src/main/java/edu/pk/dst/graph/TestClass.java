@@ -6,5 +6,6 @@ public class TestClass {
         PrimsMST.main(null);
         UndirectedGraphCycleDetection.main(null);
         DijkstraShortestPath.main(null);
+        BellmanFordShortestPart.main(null);
     }
 }

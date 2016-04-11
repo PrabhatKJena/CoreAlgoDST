@@ -14,8 +14,6 @@ import java.util.*;
  *  @param <E>  is a Comparable type [i.e  Integer, Character, Double etc]
  */
 public class Graph<E extends Comparable> {
-    private int vCount;
-    private int eCount;
     private List<Edge> edges;
     private Set<Vertex<E>> vertices;
 
@@ -89,8 +87,8 @@ public class Graph<E extends Comparable> {
     @Override
     public String toString() {
         return "Graph{" +
-                "vCount=" + vCount +
-                ", eCount=" + eCount +
+                "vCount=" + getVCount() +
+                ", eCount=" + getECount() +
                 ", edges=" + edges +
                 ", vertices=" + vertices +
                 '}';
