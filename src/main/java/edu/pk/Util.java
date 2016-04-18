@@ -1,17 +1,10 @@
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
+package edu.pk;
 
-public class Solution {
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
 
-    public static void main(String[] args) throws IOException {
-
-    }
-}
-
-class Util {
+public class Util {
 
     public static void print(int a[][]) {
         for (int x[] : a) {

@@ -13,6 +13,13 @@ public class PKUtil {
         System.out.println();
     }
 
+    public static void print(double[] a) {
+        for (double i : a) {
+            System.out.print(i + "  ");
+        }
+        System.out.println();
+    }
+
     public static void print(Iterable<Node> iterable) {
         iterable.forEach(e -> System.out.printf("%-8d", e.getData()));
         System.out.println();
