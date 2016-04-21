@@ -1,5 +1,8 @@
 package edu.pk.algo.dynapro;
 
+import edu.pk.PKUtil;
+import edu.pk.Util;
+
 /**
  * Find Longest Pallindrom Substring using Dynamic Programming
  * 
@@ -13,19 +16,21 @@ package edu.pk.algo.dynapro;
  */
 public class LongestPallindromSubstring {
 	public static void main(String[] args) {
-		String str = "abcdmalayalamb";
+		String str = "abbdmalayalambb";
 		char[] chars = str.toCharArray();
 		int len = chars.length;
 		Boolean s[][] = new Boolean[len][len];
+        // fills left diagonal and next left small diagonal i.e for each substring of length 2
 		for (int i = 0; i < len; i++) {
-			s[i][i] = true;
-			if (i < len - 1)
+			s[i][i] = true; // base case, to fill left diagonal
+			if (i < len - 1) // for up to previous of the last
 				if (chars[i] == chars[i + 1])
 					s[i][i + 1] = true;
 				else
 					s[i][i + 1] = false;
 		}
 
+        // filling the remaining diagonals (diagonally)
 		int pallindromStartIndex = -1;
 		int pallindromEndIndex = 0;
 		for (int l = 2; l < len; l++) {
