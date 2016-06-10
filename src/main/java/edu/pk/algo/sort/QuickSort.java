@@ -7,7 +7,7 @@ import java.util.Stack;
 public class QuickSort {
     public static void main(String[] args) {
         int a[] = {1300, 1103, 114, 504, 78, -239, -11, 99, 760};
-        quickSortIterative(a, 0, a.length - 1);
+//        quickSortIterative(a, 0, a.length - 1);
         PKUtil.print(a);
     }
 
@@ -15,7 +15,7 @@ public class QuickSort {
      * Iterative method
      * Put low and high in stack to work same as recursive
      */
-    private static void quickSortIterative(int[] a, int l, int h) {
+    private  void quickSortIterative(int[] a, int l, int h) {
         if (l < h) {
             Stack<Integer> stack = new Stack<>();
             stack.push(l);
@@ -39,7 +39,7 @@ public class QuickSort {
     /**
      * Recursive method
      */
-    public static void quickSortRecursive(int a[], int low, int high) {
+    public  void quickSortRecursive(int a[], int low, int high) {
         if (low < high) {
             int pivot = findPivotIndex(a, low, high);
             quickSortRecursive(a, low, pivot - 1);
@@ -47,7 +47,7 @@ public class QuickSort {
         }
     }
 
-    private static int findPivotIndex(int[] a, int low, int high) {
+    private  int findPivotIndex(int[] a, int low, int high) {
         int pivot = a[high];
         int i = low - 1; // elements smaller than pivot will be up to i index
         for (int j = low; j < high; j++) {

@@ -24,7 +24,7 @@ public class Knapsack10Greedy {
         if (wt[length - 1] > W)
             return knapsackGreedy(val, wt, length - 1, W);
         else
-            //Maximum value obtained by n-1 items and W weight (excluding nth item).
+            //Maximum value obtained by n-1 items and W weight (both including and excluding nth item).
             return Math.max(knapsackGreedy(val, wt, length - 1, W),
                     val[length - 1] + knapsackGreedy(val, wt, length - 1, W - wt[length - 1]));
     }
@@ -36,7 +36,7 @@ public class Knapsack10Greedy {
         int T[][] = new int[length + 1][W + 1];
         for (int i = 0; i < length + 1; i++) { // for each item including 0th item
             for (int w = 0; w <= W; w++) {
-                /* if knapsack weight is 0 OR 0 item, then the maximum value can be collected is 0 */
+                /* if required weight is 0 OR no of items is 0, then the maximum value can be collected is 0 */
                 if (i == 0 || w == 0)
                     T[i][w] = 0;
                 else {

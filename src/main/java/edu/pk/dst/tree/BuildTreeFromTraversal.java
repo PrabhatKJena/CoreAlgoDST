@@ -12,7 +12,7 @@ public class BuildTreeFromTraversal {
         bNode = buildFromInAndPre(inOrder, 0, inOrder.length() - 1, preOrder, 0, preOrder.length() - 1);
         printPreorder(bNode);
 
-        bNode = buildFromPreAndPost(inOrder, 0, inOrder.length() - 1, preOrder, 0, preOrder.length() - 1);
+        //bNode = buildFromPreAndPost(inOrder, 0, inOrder.length() - 1, preOrder, 0, preOrder.length() - 1);
     }
 
     public static BNode<Character> buildFromPreAndPost(String inOrder, int inStart, int inEnd, String postOrder, int postStart, int postEnd) {
@@ -31,14 +31,20 @@ public class BuildTreeFromTraversal {
         if (inEnd < inStart || postEnd < postStart) {
             return null;
         }
+        // Taking last from Post-order as Root
         char rootData = postOrder.charAt(postEnd);
         BNode<Character> root = new BNode(rootData);
 
+        // If only one node in in-order then return the root as the tree contains only root node
         if (inStart == inEnd)
             return root;
 
+        // Find the root index from in-order
         int rootIndex = searchRootIndex(inOrder, inStart, inEnd, rootData);
         if (rootIndex != -1) {
+            // left subtree will be from inStart to rootIndex-1 in in-order and from postStart to postStart+rootIndex-(inStart+1) in post-order
+            // Inorder = 425186379, here rootIndex is (3). So left subtree is from inStart to rootIndex-1 i.e 425
+            // Postorder = 452869731,  and here left subtree will be from 452 i.e postStart to postStart+rootIndex-(inStart+1)
             root.setLeft(buildFromInAndPost(inOrder, inStart, rootIndex - 1, postOrder, postStart, postStart + rootIndex - (inStart + 1)));
             root.setRight(buildFromInAndPost(inOrder, rootIndex + 1, inEnd, postOrder, postStart + rootIndex - inStart, postEnd - 1));
         }

@@ -4,7 +4,7 @@ public class Node<E> {
     protected E data;
     protected Node<E> next;
 
-    public Node(){
+    public Node() {
 
     }
 
@@ -13,6 +13,10 @@ public class Node<E> {
     }
 
     public E getData() {
+        return data;
+    }
+
+    public E getData1() {
         return data;
     }
 
@@ -31,7 +35,7 @@ public class Node<E> {
     @Override
     public String toString() {
         return "Node{" +
-                "data=" + data +
+                "data=" + (data == null ? "" : data) +
                 ", next=" + (next == null ? "X" : next.getData()) +
                 '}';
     }

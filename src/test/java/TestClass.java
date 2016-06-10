@@ -1,4 +1,4 @@
-package edu.pk.dst.graph;
+import edu.pk.dst.graph.*;
 
 public class TestClass {
     public static void main(String[] args) {
