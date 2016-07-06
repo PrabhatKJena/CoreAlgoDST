@@ -12,5 +12,7 @@ public class TestClass {
         DijkstraShortestPath.main(null);
         System.out.println("--------------------------------BellmanFordShortestPart--------------------------------");
         BellmanFordShortestPart.main(null);
+
+        System.out.println("Test line");
     }
 }
