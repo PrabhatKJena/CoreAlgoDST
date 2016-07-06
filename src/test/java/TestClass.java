@@ -14,5 +14,6 @@ public class TestClass {
         BellmanFordShortestPart.main(null);
 
         System.out.println("Test line");
+        System.out.println("Test line- 123");
     }
 }
