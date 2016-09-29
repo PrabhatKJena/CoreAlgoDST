@@ -38,6 +38,12 @@ public class RadixSort {
      *    the earlier number is smaller than the followed number. So pick from rigth to left, so that
      *    the greater number will be at the larger index(position) in the output array
      *
+     * What is the running time of Radix Sort?
+     * Let there be d digits in input integers. Radix Sort takes O(d*(n+b)) time where b is the base for representing numbers,
+     * for example, for decimal system, b is 10. What is the value of d? If k is the maximum possible value, 
+     * then d would be O(logb(k)). So overall time complexity is O((n+b) * logb(k)). Which looks more than the time complexity 
+     * of comparison based sorting algorithms for a large k. Let us first limit k. Let k <= nc where c is a constant. 
+     * In that case, the complexity becomes O(nLogb(n)). But it still doesn’t beat comparison based sorting algorithms.
      */
     private static void countingSort(int a[], int nthDigit) {
         int len = a.length;
