@@ -1,3 +1,4 @@
+/*
 package edu.pk.poc.tts;
 
 import javax.swing.*;
@@ -95,3 +96,4 @@ public class AlarmClock {
         timer.start();
     }
 }
+*/

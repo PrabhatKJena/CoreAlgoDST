@@ -126,7 +126,7 @@ public class LinkedList<E> implements Iterable<Node> {
 
         @Override
         public boolean hasNext() {
-            return size != 0;//
+            return size != 0;
         }
 
         @Override
