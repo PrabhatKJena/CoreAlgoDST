@@ -108,6 +108,7 @@ public class GraphUtil {
     public static Graph<Integer> createSampleGraph() {
         Graph<Integer> graph = new Graph<>();
 
+        // Do Not Change, It is created based on Sample-graph.jpg
         graph.addEdge(0, 1, 4);
         graph.addEdge(0, 7, 8);
         graph.addEdge(1, 2, 8);

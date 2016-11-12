@@ -1,5 +1,5 @@
 package edu.pk.dst.tree;
 
 public class BTree<E> {
-    private BNode<E> root;
+    protected BNode<E> root;
 }

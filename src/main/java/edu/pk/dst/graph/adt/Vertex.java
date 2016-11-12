@@ -1,7 +1,5 @@
 package edu.pk.dst.graph.adt;
 
-import edu.pk.dst.graph.AdjVertex;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

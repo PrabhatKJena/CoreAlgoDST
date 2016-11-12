@@ -1,5 +1,6 @@
 package edu.pk.dst.graph;
 
+import edu.pk.dst.graph.adt.AdjVertex;
 import edu.pk.dst.graph.adt.Edge;
 import edu.pk.dst.graph.adt.Graph;
 import edu.pk.dst.graph.adt.Vertex;

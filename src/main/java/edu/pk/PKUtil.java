@@ -3,8 +3,6 @@ package edu.pk;
 import edu.pk.dst.Iterable;
 import edu.pk.dst.Node;
 
-import java.util.Iterator;
-
 public class PKUtil {
     public static void print(int[] a) {
         for (int i : a) {

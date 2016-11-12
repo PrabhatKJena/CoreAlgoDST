@@ -1,7 +1,5 @@
 package edu.pk.dst.graph.adt;
 
-import edu.pk.dst.graph.AdjVertex;
-
 import java.util.*;
 
 /**
@@ -32,7 +30,7 @@ public class Graph<E extends Comparable> {
     // Adding a new edge into graph with weight
     public void addEdge(E src, E dst, int w) {
         Vertex<E> srcV = createVertex(src);
-        Vertex destV = createVertex(dst);
+        Vertex<E> destV = createVertex(dst);
         createEdge(srcV, destV, w);
         updateAdjacent(srcV, destV, w);
     }

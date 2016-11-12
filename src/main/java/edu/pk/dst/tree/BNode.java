@@ -42,9 +42,9 @@ public class BNode<E> {
     @Override
     public String toString() {
         return "{" +
-                "[" + (right == null ? "X" : right) + "]" +
+                "[" + (left == null ? "X" : left.getData()) + "]" +
                 "," + data +
-                ", [" + (right == null ? "X" : right) + "]" +
+                ",[" + (right == null ? "X" : right.getData()) + "]" +
                 '}';
     }
 }
