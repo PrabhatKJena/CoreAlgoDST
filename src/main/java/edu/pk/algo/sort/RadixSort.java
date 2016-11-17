@@ -20,13 +20,13 @@ public class RadixSort {
 
             // Repeatedly Sort by 1st digit to nth digit
             int nthDigit = 1;
-            while (maxNo > 0) {
+            while (maxNo > 0) { // iterate for the number of digits of the max number
                 countingSort(a, nthDigit);
                 nthDigit++;
                 maxNo /= 10;
+                PKUtil.print(a);
             }
         }
-        PKUtil.print(a);
     }
 
     /**
@@ -48,7 +48,7 @@ public class RadixSort {
     private static void countingSort(int a[], int nthDigit) {
         int len = a.length;
         int exp = (int) Math.pow(10, (nthDigit - 1));
-        int count[] = new int[10];
+        int count[] = new int[10]; // Counting based on the nthDigit, so range of digit is 10 [0-9]
         for (int i = 0; i < len; i++) {
             count[(a[i] / exp) % 10]++;
         }
@@ -57,8 +57,9 @@ public class RadixSort {
         }
         int[] output = new int[len];
         for (int i = len - 1; i >= 0; i--) {
-            output[count[(a[i] / exp) % 10] - 1] = a[i];
-            count[(a[i] / exp) % 10]--;
+            int index = (a[i] / exp) % 10;
+            output[count[index] - 1] = a[i];
+            count[index]--;
         }
         for (int i = 0; i < len; i++) {
             a[i] = output[i];

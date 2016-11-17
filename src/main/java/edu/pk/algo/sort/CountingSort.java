@@ -5,7 +5,7 @@ import edu.pk.PKUtil;
 public class CountingSort {
     public static void main(String[] args) {
         int a[] = {11, 12, 16, 13, -11, 18, 13, 12, 11, 14, -17}; //1 1 1 2 2 3 3 4 6 7 8
-        countingSort(a, -17, 19);
+        countingSort(a, -17, 18);
         PKUtil.print(a);
     }
 

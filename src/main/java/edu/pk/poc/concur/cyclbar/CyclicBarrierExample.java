@@ -59,9 +59,10 @@ class CyclicBarrier {
         ++count;
         while (count < size)
             wait();
-        if (!isActionTriggered)
+        if (!isActionTriggered) {
             action.run();
-        isActionTriggered = true;
+            isActionTriggered = true;
+        }
         notifyAll();
     }
 }

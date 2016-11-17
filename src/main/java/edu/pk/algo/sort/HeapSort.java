@@ -4,12 +4,12 @@ public class HeapSort {
 	public static void main(String[] args) {
 		int a[] = { 8, -118, 2, -3, 0, 11, 3, 0, -56, 4, -90 };
 		print(a);
-		heapSort(a, false);
+		heapSort(a, true);
 		print(a);
 	}
 
 	/**
-	 * Modified version of heap sort 
+	 * Modified version of heap sort
 	 * @param a is an array of integers
 	 * @param isAscending is the order whether ascending or descending
 	 */
@@ -30,7 +30,7 @@ public class HeapSort {
 	private static void heapify(int[] a, boolean isMax) {
 		int l = a.length;
 		/* Start from parent of last leaf node */
-		int i = (int) Math.ceil(l / 2) - 1;
+		int i = l / 2 - 1;
 		while (i >= 0) {
 			shiftDown(a, i, a.length, isMax);
 			i--;
@@ -42,7 +42,7 @@ public class HeapSort {
 		int r = 2 * i + 2;
 		int max = i;
 		// If Max-heap, compare child > root
-		if (isMax) { 
+		if (isMax) {
 			if (l < heapSize && a[l] > a[i])
 				max = l;
 			if (r < heapSize && a[r] > a[max])
