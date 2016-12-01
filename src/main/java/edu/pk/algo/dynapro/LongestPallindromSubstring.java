@@ -13,6 +13,7 @@ import edu.pk.Util;
  *		
  * Therefore : 
  *		P[i][j] = true iff ( P[i+1][j-1] == true && S(i) == S(j) )
+ *		// i.e   if abcba is the result iff bcb is the previous result and a==a
  */
 public class LongestPallindromSubstring {
 	public static void main(String[] args) {
@@ -20,7 +21,7 @@ public class LongestPallindromSubstring {
 		char[] chars = str.toCharArray();
 		int len = chars.length;
 		Boolean s[][] = new Boolean[len][len];
-        // fills left diagonal and next left small diagonal i.e for each substring of length 2
+        // fills left main diagonal and next left small diagonal (\) i.e for each substring of length 2
 		for (int i = 0; i < len; i++) {
 			s[i][i] = true; // base case, to fill left diagonal
 			if (i < len - 1) // for up to previous of the last

@@ -6,8 +6,8 @@ package edu.pk.algo.dynapro;
  */
 public class ChangeCoinProblem {
     public static void main(String[] args) {
-        int S[] = {1, 2, 4, 5};
-        int n = 6;
+        int S[] = {1, 2, 5, 10};
+        int n = 4;
         int a = countRecursive(S, 0, n);
         System.out.println(a);
         a = countDynamic(S, n);
@@ -23,7 +23,7 @@ public class ChangeCoinProblem {
      */
     private static int countDynamic(int[] s, int n) {
         int a[][] = new int[s.length + 1][n + 1];
-        for (int i = 0; i <= s.length; i++) { // for all coins fom S0 to S(length)-1
+        for (int i = 0; i <= s.length; i++) { // for all coins fom S0 to S(length)
             for (int j = 0; j <= n; j++) { // for all values from 0 to n
                 if (j == 0) {// if amount is 0 then only 1 solution i.e no coin
                     a[i][j] = 1;
@@ -55,9 +55,9 @@ public class ChangeCoinProblem {
     /**
      * Recursive Method
      *
-     * @param S
+     * @param S Set of Coins
      * @param m
-     * @param n
+     * @param n Amount
      * @return
      */
     private static int countRecursive(int[] S, int m, int n) {

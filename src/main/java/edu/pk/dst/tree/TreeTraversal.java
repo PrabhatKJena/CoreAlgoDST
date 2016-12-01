@@ -4,13 +4,13 @@ import java.util.Stack;
 
 /**
  * Created by Prabhat on 12/11/16.
- *                    1
- *                  /  \
- *                 2    3
- *                / \  /
- *               4  5 6
- *                 /
- *                7
+ *        1
+ *      /  \
+ *     2    3
+ *    / \  /
+ *   4  5 6
+ *  /
+ *  7
  */
 public class TreeTraversal {
     public static void main(String[] args) {
@@ -26,12 +26,38 @@ public class TreeTraversal {
         System.out.println();
         inOrderNonRecurssive(bTree.root);
         System.out.println();
+        inOrderIterative(bTree.root);
+        System.out.println();
 
         System.out.println("Post-Order :");
         postOrder(bTree.root);
         System.out.println();
         postOrderNonRecurssive(bTree.root);
         System.out.println();
+        postOrderIterative(bTree.root);
+        System.out.println();
+    }
+
+    private static void postOrderIterative(BNode root) {
+        if (root != null) {
+            Stack<BNode> s1 = new Stack<>();
+            Stack<BNode> s2 = new Stack<>();
+            s1.push(root);
+            while (!s1.isEmpty()) {
+                BNode bNode = s1.pop();
+                s2.push(bNode);
+
+                if (bNode.getLeft() != null)
+                    s1.push(bNode.getLeft());
+                if (bNode.getRight() != null)
+                    s1.push(bNode.getRight());
+            }
+
+            while (!s2.isEmpty()) {
+                System.out.print(s2.pop().getData() + "  ");
+            }
+
+        }
     }
 
     private static void postOrderNonRecurssive(BNode root) {
@@ -92,6 +118,24 @@ public class TreeTraversal {
                 // If current node has right child, then print the current node and process its right child
                 System.out.print(ptr.getData() + "  ");
                 ptr = ptr.getRight();
+            }
+        }
+    }
+
+    public static void inOrderIterative(BNode root) {
+        Stack<BNode> stack = new Stack<>();
+        BNode currNode = root;
+        while (true) {
+            if (currNode != null) { // Id node != NULL, move to left
+                stack.push(currNode);
+                currNode = currNode.getLeft();
+            } else { // When currNode == NULL, i.e. left is NULL, So process the parent from popping from Stack
+                // and move to right
+                if (stack.isEmpty()) // If Stack is Empty then exit
+                    return;
+                currNode = stack.pop();
+                System.out.print(currNode.getData() + "  ");
+                currNode = currNode.getRight();
             }
         }
     }

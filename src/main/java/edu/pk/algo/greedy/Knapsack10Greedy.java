@@ -4,8 +4,8 @@ import edu.pk.Util;
 
 public class Knapsack10Greedy {
     public static void main(String[] args) {
-        int wt[] = {2, 3, 4, 5};
-        int val[] = {3, 4, 5, 8};
+        int wt[] = {5, 2, 3, 4};
+        int val[] = {6, 3, 4, 5};
         int W = 5;
         int total = knapsackGreedy(val, wt, val.length, W);
         System.out.println(total);
@@ -24,9 +24,9 @@ public class Knapsack10Greedy {
         if (wt[length - 1] > W)
             return knapsackGreedy(val, wt, length - 1, W);
         else
-            //Maximum value obtained by n-1 items and W weight (both including and excluding nth item).
-            return Math.max(knapsackGreedy(val, wt, length - 1, W),
-                    val[length - 1] + knapsackGreedy(val, wt, length - 1, W - wt[length - 1]));
+            //Maximum value obtained by n-1 items and W weight (both excluding and including nth item).
+            return Math.max(knapsackGreedy(val, wt, length - 1, W), // excluding
+                    val[length - 1] + knapsackGreedy(val, wt, length - 1, W - wt[length - 1])); // including
     }
 
     /*

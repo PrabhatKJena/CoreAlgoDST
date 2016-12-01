@@ -13,7 +13,7 @@ package edu.pk.algo.math;
  Let’s see how.
 
  Let’s take the example of 2 digit numbers in decimal
- AB = 11A -A + B = 11A + (B – A)
+ AB = 11A – A + B = 11A + (B – A)
  So if (B – A) is a multiple of 11 then is AB.
 
  Let us take 3 digit numbers.

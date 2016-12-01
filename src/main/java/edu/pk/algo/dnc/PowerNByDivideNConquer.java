@@ -2,12 +2,12 @@ package edu.pk.algo.dnc;
 
 public class PowerNByDivideNConquer {
     public static void main(String[] args) {
-        System.out.println(pow(2, -5));
-        System.out.println(Math.pow(2, 1.2));
+        System.out.println(pow(2, -1));
+        System.out.println(Math.pow(2, -1));
     }
 
     /**
-     * Time complexity T(n) = O(logn)
+     * Time complexity T(N) = O(log N)
      * @param i
      * @param j
      * @return
