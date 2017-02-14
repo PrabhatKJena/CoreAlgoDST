@@ -1,0 +1,66 @@
+/**
+ * A robot is located in the upper-left corner of a 4×4 grid. The robot can move either up, down, left, or right,
+ * but cannot go to the same location twice. The robot is trying to reach the lower-right corner of the grid.
+ * Your task is to find out the number of unique ways to reach the destination.
+ *
+ * Created by Prabhat on 2/13/2017.
+ */
+package edu.pk.algo;
+
+public class RoboProblem {
+    static int d = 4;
+    static int sol = 0;
+
+    public static void main(String[] args) {
+//      int a[][] = new int[][]{{0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0}};
+        int a[][] = new int[][]{{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}};
+        findPath(a, 0, 0, 0);
+        System.out.println(sol);
+    }
+
+    private static void findPath(int[][] arr, int i, int j, int seq) {
+        int a[][] = new int[d][d];
+        copyArray(arr, a);
+        a[i][j] = ++seq;
+        if (i == d - 1 && j == d - 1) {
+            sol++;
+            printSol(a);
+            return;
+        }
+        // move UP
+        if (i > 0 && a[i - 1][j] == 0) {
+            findPath(a, i - 1, j, seq);
+        }
+        // move DOWN
+        if (i < d - 1 && a[i + 1][j] == 0) {
+            findPath(a, i + 1, j, seq);
+        }
+        // move LEF
+        if (j > 0 && a[i][j - 1] == 0) {
+            findPath(a, i, j - 1, seq);
+        }
+        // move RIGHT
+        if (j < d - 1 && a[i][j + 1] == 0) {
+            findPath(a, i, j + 1, seq);
+        }
+    }
+
+    private static void printSol(int[][] a) {
+        System.out.println("Solution - " + sol + " : ");
+        for (int i = 0; i < d; i++) {
+            for (int j = 0; j < d; j++) {
+                System.out.printf("%4d", a[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+    private static void copyArray(int[][] arr, int[][] a) {
+        for (int i = 0; i < d; i++) {
+            for (int j = 0; j < d; j++) {
+                a[i][j] = arr[i][j];
+            }
+        }
+    }
+}
+
