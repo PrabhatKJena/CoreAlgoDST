@@ -96,11 +96,11 @@ public class SegmentTree<T> {
       }
       return Math.max(a, b);
     });
-    System.out.println(maxSegmentTree.query(0, 4)); // Output: 25
-    System.out.println(maxSegmentTree.query(1, 3)); // Output: 15
-    System.out.println(maxSegmentTree.query(3, 5)); // Output: 15
-    System.out.println(maxSegmentTree.query(1, 5)); // Output: 42
+    System.out.println(maxSegmentTree.query(0, 4)); // Output: 11
+    System.out.println(maxSegmentTree.query(1, 3)); // Output: 11
+    System.out.println(maxSegmentTree.query(3, 5)); // Output: 9
+    System.out.println(maxSegmentTree.query(1, 5)); // Output: 11
     maxSegmentTree.update(1, 8);
-    System.out.println(maxSegmentTree.query(1, 5)); // Output: 42
+    System.out.println(maxSegmentTree.query(1, 5)); // Output: 9
   }
 }
