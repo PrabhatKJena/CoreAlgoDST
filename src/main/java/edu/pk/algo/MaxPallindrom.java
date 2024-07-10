@@ -22,15 +22,18 @@ public class LongestPalindrom {
     int pallindromStartIndex = 0;
     final char[] array = str.toCharArray();
     boolean[][] dp = new boolean[array.length][array.length];
+    // fill diagonal
     for (int i = 0; i < array.length; i++) {
       dp[i][i] = true;
     }
+    // fill (0,1) (1,2) (2,3) adjacent entries for substring length = 2
     for (int i = 1; i < array.length - 1; i++) {
       if (array[i] == array[i - 1]) {
         dp[i - 1][i] = true;
         pallindromLength = 2;
       }
     }
+    // fill for length 3 to string length
     for (int len = 2; len < array.length; len++) {
       for (int i = 0; i < array.length - len; i++) {
         if (array[i] == array[i + len] && dp[i + 1][i + len - 1]) {
