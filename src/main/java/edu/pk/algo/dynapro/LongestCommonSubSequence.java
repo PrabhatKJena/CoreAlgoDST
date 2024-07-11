@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class LongestCommonSubSequence {
 	public static void main(String[] args) {
-		System.out.println(findLongestCommonSubsequence("ABC", "XBC"));
-		System.out.println(findLongestCommonSubsequence("AGGTAB", "GXTXAYB"));
-		System.out.println(findLongestCommonSubsequence("ACADB", "CBDA"));
+		System.out.println(findLongestCommonSubsequence("ABC", "XBC")); // BC
+		System.out.println(findLongestCommonSubsequence("AGGTAB", "GXTXAYB")); // GTAB
+		System.out.println(findLongestCommonSubsequence("ACADB", "CBDA")); // CA
 	}
 	
 	private static String findLongestCommonSubsequence(String a, String b) {
