@@ -6,6 +6,23 @@ import java.util.List;
 import java.util.Queue;
 import java.util.stream.Collectors;
 
+/*
+A
++---B
++---C
+    +---E
+    +---F
++---D
+A:3,B:0,C:2,D:0,E:0,F:0,
+A
++---B
++---C
+    +---E
+    +---F
++---D
+
+*/
+
 public class SerializeDeserializeNAryTree {
 
   static class NNode {
