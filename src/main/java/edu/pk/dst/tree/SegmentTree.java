@@ -58,14 +58,14 @@ public class SegmentTree<T> {
   }
 
   /**
-   * Queries the sum in the range [left, right).
+   * Queries the required result in the range [left, right).
    *
    * @param left  the left index (inclusive)
    * @param right the right index (exclusive)
-   * @return the sum in the range [left, right)
+   * @return the result in the range [left, right)
    */
   public T query(int left, int right) {
-    T sum = null;
+    T result = null;
     // Move left, right to leaf node side which are the actual input elements
     left += n;
     right += n;
@@ -73,19 +73,19 @@ public class SegmentTree<T> {
       /* if left index is a right node of its parent, then consider that element
       and jump to parent of its next element in range. */
       if (left % 2 == 1) {
-        sum = operation.apply(sum, tree.get(left));
+        result = operation.apply(result, tree.get(left));
         left++;
       }
       /* if right index is a left node of its parent, then consider that element
       and jump to parent of its previous element in range. */
       if (right % 2 == 0) {
-        sum = operation.apply(sum, tree.get(right));
+        result = operation.apply(result, tree.get(right));
         right--;
       }
       left /= 2;
       right /= 2;
     }
-    return sum;
+    return result;
   }
 
   public static void main(String[] args) {
