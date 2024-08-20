@@ -31,6 +31,27 @@ class TrieTreeDemo {
 		System.out.println("b->" + tree.suggest("b"));
 		System.out.println("bl->" + tree.suggest("bl"));
 		System.out.println("sl->" + tree.suggest("sl"));
+
+		/*
+		  |--b
+		    |--i
+		      |--g $
+		    |--l
+		      |--a
+		        |--c
+		          |--k $
+		      |--u
+		        |--e $
+		  |--s
+		    |--m
+		      |--a
+		        |--l
+		          |--l $
+		
+  		b->[big, black, blue]
+		bl->[black, blue]
+		sl->[]
+		*/
 	}
 }
 
